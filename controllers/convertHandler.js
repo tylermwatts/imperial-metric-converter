@@ -72,7 +72,7 @@ function ConvertHandler() {
         result = initNum / lbsToKg;
         break;
       default:
-        result = 1;
+        result = null;
         break;
     }
     return result;

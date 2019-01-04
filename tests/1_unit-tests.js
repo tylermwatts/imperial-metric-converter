@@ -66,7 +66,7 @@ suite('Unit Tests', function(){
     
     test('Unknown Unit Input', function(done) {
       var input = 'lal';
-      assert.equal(convertHandler.getUnit(input), 'invalid unit');
+      assert.equal(convertHandler.getUnit(input), 'invalid input unit');
       done();
     });  
     
