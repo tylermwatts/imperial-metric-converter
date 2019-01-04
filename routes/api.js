@@ -24,10 +24,10 @@ module.exports = function (app) {
         if (initUnit === 'invalid unit'){
           return res.json({initNum, initUnit, returnNum: null, returnUnit: null, string: 'invalid number and unit'})
         } else {
-          return res.json({string: 'invalid number'})
+          return res.json({initNum, initUnit, returnNum: null, returnUnit: null, string: 'invalid number'})
         }
-      } else if (initUnit === 'invalid unit'){
-        return res.json({error: 'invalid unit'})
+      } else if (initUnit === 'invalid input unit'){
+        return res.json({initNum, initUnit, returnNum: null, returnUnit: null, string: 'invalid input unit'})
       } else {
         var returnNum = convertHandler.convert(initNum, initUnit);
         var returnUnit = convertHandler.getReturnUnit(initUnit);

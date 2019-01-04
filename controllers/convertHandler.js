@@ -29,7 +29,7 @@ function ConvertHandler() {
     if (validInputs.includes(result)){
       return result;
     }
-    return 'invalid unit';
+    return 'invalid input unit';
   };
   
   this.getReturnUnit = function(initUnit) {
