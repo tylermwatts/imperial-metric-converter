@@ -27,23 +27,24 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     var validInputs = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     var result = input.split(/([a-z])/gi).filter(d=>d.match(/[a-z]/gi)).join('');
-    if (validInputs.findIndex(result) === -1){
-      return 'invalid unit';
-    } else {
-    console.log(result)
-    return result;
+    if (validInputs.includes(result)){
+      console.log(result);
+      return result;
     }
+    return 'invalid unit';
   };
   
   this.getReturnUnit = function(initUnit) {
-    var result;
-    
+    var input = ['gal','l','mi','km','lbs','kg'];
+    var expect = ['l','gal','km','mi','kg','lbs'];
+    var result = expect[input.indexOf(initUnit)]
     return result;
   };
 
   this.spellOutUnit = function(unit) {
-    var result;
-    
+    var input = ['gal','l','mi','km','lbs','kg'];
+    var expect = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms']
+    var result = expect[input.indexOf(unit)];
     return result;
   };
   
