@@ -29,14 +29,14 @@ function ConvertHandler() {
     var result = input.split(/([a-z])/gi).filter(d=>d.match(/[a-z]/gi)).join('');
     if (validInputs.includes(result)){
       console.log(result);
-      return result.toLowerCase();
+      return result;
     }
     return 'invalid unit';
   };
   
   this.getReturnUnit = function(initUnit) {
     var input = ['gal','l','mi','km','lbs','kg'];
-    var expect = ['l','gal','km','mi','kg','lbs'];
+    var expect = ['l','gal','km','mi','kg','lbs', 'L', 'GAL', 'KM', 'MI', 'KG', 'LBS'];
     var result = expect[input.indexOf(initUnit)]
     return result;
   };
@@ -44,7 +44,7 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     var input = ['gal','l','mi','km','lbs','kg'];
     var expect = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms']
-    var result = expect[input.indexOf(unit)];
+    var result = expect[input.indexOf(unit.toLowerCase())];
     return result;
   };
   
