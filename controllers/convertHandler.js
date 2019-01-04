@@ -52,9 +52,20 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
+    var input = ['gal','l','mi','km','lbs','kg'];    
+    var result = 1;
+    switch(initUnit){
+      case input[0]:
+        result = initNum * galToL;
+        break;
+      case input[1]:
+        result = initNum / galToL;
+        break;
+      case input[2]:
+        result = initNum * 
+    }
     
-    return result;
+    return result.toFixed(5);
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
