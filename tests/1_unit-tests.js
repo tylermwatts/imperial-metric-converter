@@ -23,9 +23,9 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      // var input = '3.1gal';
-      // assert.equal(convertHandler.getNum(input),3.1);
-      // done();
+      var input = '3.1gal';
+      assert.equal(convertHandler.getNum(input),3.1);
+      done();
     });
     
     test('Fractional Input', function(done) {
@@ -34,8 +34,9 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = '1/2km';
+      assert.equal(convertHandler.getNum(input),0.5);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {

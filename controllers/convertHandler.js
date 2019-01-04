@@ -9,15 +9,20 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result = input.split(/[a-z]/gi)[0]
+    if (input.includes('/')){
+      var numArr = result.split('/')
+      var result = parseFloat(numArr[0] / numArr[1])
+    } else {
+      var result = input.split(/[a-z]/gi)[0]
+    }
     console.log(result)
     return result;
   };
   
   this.getUnit = function(input) {
-    var result;
-    
-    return result;
+    // var result = input.split(/([a-z])/gi)
+    // console.log(result)
+    // return result;
   };
   
   this.getReturnUnit = function(initUnit) {
