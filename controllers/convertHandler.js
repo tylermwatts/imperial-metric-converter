@@ -10,8 +10,11 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     if (input.includes('/')){
-      var numArr = result.split('/')
-      var result = parseFloat(numArr[0] / numArr[1])
+      var numArr = input.split('/')
+      if (numArr.length > 2) {
+        return 'invalid number'
+      }
+      var result = (parseFloat(numArr[0]) / parseFloat(numArr[1]))
     } else {
       var result = input.split(/[a-z]/gi)[0]
     }
