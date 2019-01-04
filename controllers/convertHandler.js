@@ -14,13 +14,12 @@ function ConvertHandler() {
       if (numArr.length > 2) {
         return 'invalid number'
       }
-      var result = (parseFloat(numArr[0] / numArr[1])
+      var result = (parseFloat(numArr[0]) / parseFloat(numArr[1]))
     } else if (input.match(/^\d/) === null){
       var result = 1;
     } else {
       var result = input.split(/[a-z]/gi)[0]
     }
-    console.log(result)
     return result;
   };
   
@@ -28,7 +27,6 @@ function ConvertHandler() {
     var validInputs = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     var result = input.split(/([a-z])/gi).filter(d=>d.match(/[a-z]/gi)).join('');
     if (validInputs.includes(result)){
-      console.log(result);
       return result;
     }
     return 'invalid unit';
