@@ -15,6 +15,8 @@ function ConvertHandler() {
         return 'invalid number'
       }
       var result = (parseFloat(numArr[0]) / parseFloat(numArr[1]))
+    } else if (input.match(/^\d/) === null){
+      var result = 1;
     } else {
       var result = input.split(/[a-z]/gi)[0]
     }
@@ -23,9 +25,10 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    // var result = input.split(/([a-z])/gi)
-    // console.log(result)
-    // return result;
+    var result = input.split(/([a-z])/gi)
+    console.log(result)
+    
+    return result;
   };
   
   this.getReturnUnit = function(initUnit) {
