@@ -9,8 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
-    
+    var result = input.split(/[a-z]/gi)[0]
+    console.log(result)
     return result;
   };
   
