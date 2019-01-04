@@ -21,8 +21,8 @@ module.exports = function (app) {
       var initNum = convertHandler.getNum(input);
       var initUnit = convertHandler.getUnit(input);
       if (initNum === 'invalid number'){
-        if (initUnit === 'invalid unit'){
-          return res.json({initNum, initUnit, returnNum: null, returnUnit: null, string: 'invalid number and unit'})
+        if (initUnit === 'invalid input unit'){
+          return res.json({initNum, initUnit, returnNum: null, returnUnit: null, string: 'invalid number and input unit'})
         } else {
           return res.json({initNum, initUnit, returnNum: null, returnUnit: null, string: 'invalid number'})
         }

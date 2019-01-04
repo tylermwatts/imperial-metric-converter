@@ -43,6 +43,7 @@ suite('Functional Tests', function() {
             assert.equal(res.body.initUnit, 'invalid input unit');
             assert.equal(res.body.returnNum, null);
             assert.equal(res.body.returnUnit, null);
+            assert.equal(res.body.string, 'invalid input unit');
             done();
         })
       });
@@ -57,6 +58,7 @@ suite('Functional Tests', function() {
             assert.equal(res.body.initUnit, 'kg');
             assert.equal(res.body.returnNum, null);
             assert.equal(res.body.returnUnit, null);
+            assert.equal(res.body.string, 'invalid number');
             done();
         })
       });  
@@ -65,12 +67,28 @@ suite('Functional Tests', function() {
         chai.request(server)
           .get('/api/convert')
           .query({input: '3/7.2/4kilomegagram'})
-        //done();
+          .end(function(err,res){
+            assert.equal(res.status, 200);
+            assert.equal(res.body.initNum, 'invalid number');
+            assert.equal(res.body.initUnit, 'invalid input unit');
+            assert.equal(res.body.returnNum, null);
+            assert.equal(res.body.returnUnit, null);
+            assert.equal(res.body.string, 'invalid number and input unit');
+            done();
+          })
       });
       
       test('Convert kg (no number)', function(done) {
-        
-        //done();
+        chai.request(server)
+          .get('/api/convert')
+          .query({input: 'kg'})
+          .end(function(err,res){
+            assert.equal(res.status, 200);
+            assert.equal(res.body.initNum, 1);
+            assert.equal(res.body.initUnit, 'kg');
+            assert.equal(res.body.returnNum,
+            //done();
+          })
       });
       
     });
