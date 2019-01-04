@@ -14,7 +14,7 @@ function ConvertHandler() {
       if (numArr.length > 2) {
         return 'invalid number'
       }
-      var result = (parseFloat(numArr[0]) / parseFloat(numArr[1]))
+      var result = (parseFloat(numArr[0] / numArr[1])
     } else if (input.match(/^\d/) === null){
       var result = 1;
     } else {
@@ -77,11 +77,11 @@ function ConvertHandler() {
         result = 1;
         break;
     }
-    return parseFloat(result.toFixed(5));
+    return result;
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result = `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum} ${this.spellOutUnit(returnUnit)}`
+    var result = `${initNum} ${this.spellOutUnit(initUnit)} converts to ${parseFloat(returnNum).toFixed(5)} ${this.spellOutUnit(returnUnit)}`
     return result;
   };
   
