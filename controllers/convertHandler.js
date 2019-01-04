@@ -29,7 +29,7 @@ function ConvertHandler() {
     var result = input.split(/([a-z])/gi).filter(d=>d.match(/[a-z]/gi)).join('');
     if (validInputs.includes(result)){
       console.log(result);
-      return result;
+      return result.toLowerCase();
     }
     return 'invalid unit';
   };
